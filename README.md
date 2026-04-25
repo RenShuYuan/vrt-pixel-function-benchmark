@@ -1,17 +1,18 @@
 # VRT Pixel Function Benchmark
 
-Reproducibility package for the paper:
+Companion code and data for the manuscript:
 
 > **A Lightweight Chained Raster Computation Framework Based on GDAL VRT Pixel Functions for Geospatial Workflows**
-> Yuan Long, *ISPRS International Journal of Geo-Information*, 2026 (under review).
+> Yuan Long. Submitted to *ISPRS International Journal of Geo-Information* (2026, under review).
+
+This repository is **not** a preprint of the manuscript itself; it is the reproducibility package referenced from the paper's *Data Availability Statement*. The manuscript will be available through the journal upon acceptance.
 
 ## What this repository contains
 
-This is the **research and reproducibility package** for the IJGI submission. It does **not** include the full visual workflow application (wfeditor) the paper describes; only the components required to reproduce the experimental results and to inspect the pixel-function implementations.
+The four components required to reproduce the experimental results in §6 of the paper and to inspect the pixel-function implementations. The full visual workflow application (wfeditor) the paper describes is **not** included; only the pixel-function library it calls and the standalone benchmark runner are released here.
 
 | Path | Content |
 |---|---|
-| `manuscript/` | Markdown source of the manuscript (figures inlined as references) |
 | `pixel_functions/` | C++ pixel-function library (`pixelDecimalFunction`, `pixelDSMDEMDiffProcessFunction`, `pixelTerrainRoughness5x5Function`, `pixelSlopFunction_S2`) as deployed in the production system, registered through `GDALAddDerivedBandPixelFunc()` |
 | `benchmark/` | Three-mode benchmark runner (`benchmark_cpp.cpp`), build script, JSON configs, and the Wilcoxon paired-test script |
 | `results/` | Aggregated case summaries, per-run benchmark records, and timing-decomposition tables for the seven mechanism cases and three production-like chains reported in the paper |
@@ -64,7 +65,7 @@ python gen_fig5.py
 
 ## Citation
 
-If you use this code or the reported results, please cite:
+If you use this code or the reported results, please cite the manuscript once it is published. While the manuscript is under review, the following placeholder may be used:
 
 ```bibtex
 @article{Long2026VRT,
@@ -75,6 +76,8 @@ If you use this code or the reported results, please cite:
   note    = {Under review}
 }
 ```
+
+The DOI and full citation will be added here when the article is accepted.
 
 ## License
 
