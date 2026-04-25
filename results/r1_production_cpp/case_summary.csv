@@ -1,0 +1,4 @@
+case_id,workload,repetitions,vrt_avg_total_elapsed_ms,vrt_std_total_elapsed_ms,geotiff_avg_total_elapsed_ms,geotiff_std_total_elapsed_ms,vsimem_avg_total_elapsed_ms,vsimem_std_total_elapsed_ms,vrt_avg_intermediate_bytes,geotiff_avg_intermediate_bytes,checksum_vrt_geotiff,checksum_geotiff_vsimem,intermediate_byte_reduction_pct,runtime_reduction_pct,io_overhead_pct,vrt_io_avoidance_pct
+prod_light_optical,production_light,5,40162.046,5174.583,46381.006,8886.169,63534.264,7973.874,1486,3818116948,True,True,100.000,13.408,-36.983,0.000
+prod_medium_chain,production_medium,10,343.495,15.973,425.225,75.572,552.132,29.353,1761,42255836,True,True,99.996,19.220,-29.845,0.000
+prod_heavy_chain,production_heavy,10,2135.689,100.935,2626.569,126.847,3812.839,146.488,1337,242713156,True,True,99.999,18.689,-45.164,0.000

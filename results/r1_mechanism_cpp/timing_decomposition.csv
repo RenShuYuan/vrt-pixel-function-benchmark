@@ -1,0 +1,8 @@
+case_id,geotiff_total_ms,vsimem_total_ms,vrt_total_ms,io_overhead_ms,io_overhead_pct,total_materialize_ms,materialize_pct,vrt_final_materialize_ms
+mech_light_small,269.3,371.3,231.5,-102.0,-37.9,203.7,75.7,165.0
+mech_light_medium,968.3,1429.6,854.0,-461.3,-47.6,725.9,75.0,607.2
+mech_light_optical_large,29209.4,41603.7,26476.2,-12394.3,-42.4,26003.6,89.0,23311.1
+mech_medium_small,332.6,461.9,292.4,-129.4,-38.9,270.8,81.4,231.4
+mech_medium_medium,1283.9,1772.2,1152.4,-488.3,-38.0,1056.6,82.3,925.1
+mech_heavy_small,558.7,732.2,517.4,-173.5,-31.1,495.5,88.7,452.5
+mech_heavy_medium,2302.1,3443.3,2063.2,-1141.2,-49.6,2009.0,87.3,1762.6

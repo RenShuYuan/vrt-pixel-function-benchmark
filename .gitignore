@@ -1,0 +1,29 @@
+# Build artefacts
+*.obj
+*.exp
+*.lib
+*.exe
+build_log.txt
+build_err.txt
+
+# IDE / OS
+.vs/
+.vscode/
+.idea/
+*.user
+Thumbs.db
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Local data (never commit raster inputs)
+*.tif
+*.tiff
+*.vrt
+testData/
+real_inputs/
+
+# Local benchmark outputs (commit only the published ones in results/)
+results/_local_runs/

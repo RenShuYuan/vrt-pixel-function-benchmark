@@ -1,0 +1,187 @@
+{
+  "output_root": "./results/r1_mechanism_cpp",
+  "repetitions": 10,
+  "datasets": {
+    "dem_small": {
+      "path": "${INPUT_VRT_DIR}/dem_small.vrt",
+      "nodata": -9999
+    },
+    "dem_medium": {
+      "path": "${INPUT_VRT_DIR}/dem_medium.vrt",
+      "nodata": -9999
+    },
+    "dsm_small": {
+      "path": "${INPUT_VRT_DIR}/dsm_small.vrt",
+      "nodata": -9999
+    },
+    "dsm_medium": {
+      "path": "${INPUT_VRT_DIR}/dsm_medium.vrt",
+      "nodata": -9999
+    },
+    "single_band_optical_large": {
+      "path": "${TEST_DATA_DIR}/optical_large.tif"
+    }
+  },
+  "cases": [
+    {
+      "id": "mech_light_small",
+      "workload": "light",
+      "repetitions": 10,
+      "steps": [
+        {
+          "op": "pixel_decimal",
+          "input": "dem_small",
+          "params": {
+            "decimal": 2
+          }
+        },
+        {
+          "op": "pixel_modify",
+          "input": "prev",
+          "params": {
+            "value_old": 0.0,
+            "value_new": 100.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "mech_light_medium",
+      "workload": "light",
+      "repetitions": 10,
+      "steps": [
+        {
+          "op": "pixel_decimal",
+          "input": "dem_medium",
+          "params": {
+            "decimal": 2
+          }
+        },
+        {
+          "op": "pixel_modify",
+          "input": "prev",
+          "params": {
+            "value_old": 0.0,
+            "value_new": 100.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "mech_light_optical_large",
+      "workload": "light",
+      "repetitions": 5,
+      "steps": [
+        {
+          "op": "pixel_decimal",
+          "input": "single_band_optical_large",
+          "params": {
+            "decimal": 2
+          }
+        },
+        {
+          "op": "pixel_modify",
+          "input": "prev",
+          "params": {
+            "value_old": 0.0,
+            "value_new": 100.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "mech_medium_small",
+      "workload": "medium",
+      "repetitions": 10,
+      "steps": [
+        {
+          "op": "dsmdem_diff",
+          "inputs": [
+            "dsm_small",
+            "dem_small"
+          ],
+          "params": {
+            "type": "DSM",
+            "threshold": 1.0,
+            "fill_nodata": true
+          }
+        },
+        {
+          "op": "pixel_decimal",
+          "input": "prev",
+          "params": {
+            "decimal": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "mech_medium_medium",
+      "workload": "medium",
+      "repetitions": 10,
+      "steps": [
+        {
+          "op": "dsmdem_diff",
+          "inputs": [
+            "dsm_medium",
+            "dem_medium"
+          ],
+          "params": {
+            "type": "DSM",
+            "threshold": 1.0,
+            "fill_nodata": true
+          }
+        },
+        {
+          "op": "pixel_decimal",
+          "input": "prev",
+          "params": {
+            "decimal": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "mech_heavy_small",
+      "workload": "heavy",
+      "repetitions": 10,
+      "steps": [
+        {
+          "op": "pixel_decimal",
+          "input": "dem_small",
+          "params": {
+            "decimal": 2
+          }
+        },
+        {
+          "op": "roughness_5x5",
+          "input": "prev",
+          "params": {
+            "min_valid_count": 9
+          }
+        }
+      ]
+    },
+    {
+      "id": "mech_heavy_medium",
+      "workload": "heavy",
+      "repetitions": 10,
+      "steps": [
+        {
+          "op": "pixel_decimal",
+          "input": "dem_medium",
+          "params": {
+            "decimal": 2
+          }
+        },
+        {
+          "op": "roughness_5x5",
+          "input": "prev",
+          "params": {
+            "min_valid_count": 9
+          }
+        }
+      ]
+    }
+  ]
+}

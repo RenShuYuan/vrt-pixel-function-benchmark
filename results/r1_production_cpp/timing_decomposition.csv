@@ -1,0 +1,4 @@
+case_id,geotiff_total_ms,vsimem_total_ms,vrt_total_ms,io_overhead_ms,io_overhead_pct,total_materialize_ms,materialize_pct,vrt_final_materialize_ms
+prod_light_optical,46381.0,63534.3,40162.0,-17153.3,-37.0,42811.2,92.3,36606.8
+prod_medium_chain,425.2,552.1,343.5,-126.9,-29.8,362.1,85.2,280.3
+prod_heavy_chain,2626.6,3812.8,2135.7,-1186.3,-45.2,2337.6,89.0,1837.4

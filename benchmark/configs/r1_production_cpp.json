@@ -1,0 +1,118 @@
+{
+  "output_root": "./results/r1_production_cpp",
+  "repetitions": 10,
+  "datasets": {
+    "dem_small": {
+      "path": "${INPUT_VRT_DIR}/dem_small.vrt",
+      "nodata": -9999
+    },
+    "dem_medium": {
+      "path": "${INPUT_VRT_DIR}/dem_medium.vrt",
+      "nodata": -9999
+    },
+    "dsm_small": {
+      "path": "${INPUT_VRT_DIR}/dsm_small.vrt",
+      "nodata": -9999
+    },
+    "dsm_medium": {
+      "path": "${INPUT_VRT_DIR}/dsm_medium.vrt",
+      "nodata": -9999
+    },
+    "single_band_optical_large": {
+      "path": "${TEST_DATA_DIR}/optical_large.tif"
+    }
+  },
+  "cases": [
+    {
+      "id": "prod_light_optical",
+      "workload": "production_light",
+      "repetitions": 5,
+      "steps": [
+        {
+          "op": "pixel_decimal",
+          "input": "single_band_optical_large",
+          "params": {
+            "decimal": 2
+          }
+        },
+        {
+          "op": "pixel_modify",
+          "input": "prev",
+          "params": {
+            "value_old": 0.0,
+            "value_new": 100.0
+          }
+        },
+        {
+          "op": "pixel_decimal",
+          "input": "prev",
+          "params": {
+            "decimal": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "prod_medium_chain",
+      "workload": "production_medium",
+      "repetitions": 10,
+      "steps": [
+        {
+          "op": "dsmdem_diff",
+          "inputs": [
+            "dsm_small",
+            "dem_small"
+          ],
+          "params": {
+            "type": "DSM",
+            "threshold": 1.0,
+            "fill_nodata": true
+          }
+        },
+        {
+          "op": "pixel_decimal",
+          "input": "prev",
+          "params": {
+            "decimal": 2
+          }
+        },
+        {
+          "op": "pixel_modify",
+          "input": "prev",
+          "params": {
+            "value_old": -9999.0,
+            "value_new": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "prod_heavy_chain",
+      "workload": "production_heavy",
+      "repetitions": 10,
+      "steps": [
+        {
+          "op": "pixel_decimal",
+          "input": "dem_medium",
+          "params": {
+            "decimal": 2
+          }
+        },
+        {
+          "op": "roughness_5x5",
+          "input": "prev",
+          "params": {
+            "min_valid_count": 9
+          }
+        },
+        {
+          "op": "pixel_decimal",
+          "input": "prev",
+          "params": {
+            "decimal": 2
+          }
+        }
+      ]
+    }
+  ]
+}

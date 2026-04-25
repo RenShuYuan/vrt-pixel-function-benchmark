@@ -1,0 +1,8 @@
+case_id,workload,repetitions,vrt_avg_total_elapsed_ms,vrt_std_total_elapsed_ms,geotiff_avg_total_elapsed_ms,geotiff_std_total_elapsed_ms,vsimem_avg_total_elapsed_ms,vsimem_std_total_elapsed_ms,vrt_avg_intermediate_bytes,geotiff_avg_intermediate_bytes,checksum_vrt_geotiff,checksum_geotiff_vsimem,intermediate_byte_reduction_pct,runtime_reduction_pct,io_overhead_pct,vrt_io_avoidance_pct
+mech_light_small,light,10,231.522,10.153,269.274,16.945,371.308,13.391,638,21127918,True,True,99.997,14.020,-37.892,0.000
+mech_light_medium,light,10,853.973,25.233,968.298,39.253,1429.647,48.679,639,80914610,True,True,99.999,11.807,-47.645,0.000
+mech_light_optical_large,light,5,26476.219,685.102,29209.374,910.807,41603.690,1298.088,786,1909058474,True,True,100.000,9.357,-42.433,0.000
+mech_medium_small,medium,10,292.369,6.240,332.556,13.180,461.936,95.569,1069,21127918,True,True,99.995,12.084,-38.905,0.000
+mech_medium_medium,medium,10,1152.373,21.751,1283.896,33.579,1772.174,222.975,1071,80914610,True,True,99.999,10.244,-38.031,0.000
+mech_heavy_small,heavy,10,517.367,10.124,558.689,16.986,732.239,22.482,638,21127918,False,True,99.997,7.396,-31.064,0.000
+mech_heavy_medium,heavy,10,2063.203,170.758,2302.097,158.425,3443.295,306.369,639,80914610,True,True,99.999,10.377,-49.572,0.000
