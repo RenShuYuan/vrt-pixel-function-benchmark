@@ -3,7 +3,7 @@
 Companion code and data for the manuscript:
 
 > **A Lightweight Chained Raster Computation Framework Based on GDAL VRT Pixel Functions for Geospatial Workflows**
-> Yuan Long. Submitted to *ISPRS International Journal of Geo-Information* (2026, under review).
+> Yuan Long, Cui Zhaoyan. Prepared for submission to *ISPRS International Journal of Geo-Information* (2026).
 
 This repository is **not** a preprint of the manuscript itself; it is the reproducibility package referenced from the paper's *Data Availability Statement*. The manuscript will be available through the journal upon acceptance.
 
@@ -65,15 +65,15 @@ python gen_fig5.py
 
 ## Citation
 
-If you use this code or the reported results, please cite the manuscript once it is published. While the manuscript is under review, the following placeholder may be used:
+If you use this code or the reported results, please cite the manuscript once it is published. The following placeholder may be used while the manuscript is in submission / review:
 
 ```bibtex
-@article{Long2026VRT,
+@article{LongCui2026VRT,
   title   = {A Lightweight Chained Raster Computation Framework Based on GDAL VRT Pixel Functions for Geospatial Workflows},
-  author  = {Long, Yuan},
+  author  = {Long, Yuan and Cui, Zhaoyan},
   journal = {ISPRS International Journal of Geo-Information},
   year    = {2026},
-  note    = {Under review}
+  note    = {Prepared for submission}
 }
 ```
 

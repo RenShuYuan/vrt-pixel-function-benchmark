@@ -11,7 +11,27 @@ import csv
 import math
 from scipy import stats
 
-BASE = pathlib.Path(__file__).parent.parent / "results"
+# Auto-detect the results directory across three plausible layouts:
+#   1. zip distribution   : script and r1_*_cpp/ as siblings
+#   2. original experiments dir: experiments/analysis/script.py + experiments/results/
+#   3. GitHub companion repo  : benchmark/analysis/script.py + <root>/results/
+HERE = pathlib.Path(__file__).resolve().parent
+_CANDIDATES = [
+    HERE,                                       # zip layout (CSVs as siblings)
+    HERE.parent / "results",                    # experiments/<here>/.. + results/
+    HERE.parent.parent / "results",             # repo: benchmark/analysis/.. + results/
+    HERE.parent.parent.parent / "results",      # any 3-deep layout
+]
+BASE = next(
+    (c for c in _CANDIDATES if (c / "r1_mechanism_cpp" / "raw_runs.csv").is_file()),
+    None,
+)
+if BASE is None:
+    raise FileNotFoundError(
+        "Could not locate r1_mechanism_cpp/raw_runs.csv. Tried:\n  "
+        + "\n  ".join(str(c) for c in _CANDIDATES)
+    )
+
 MECH = BASE / "r1_mechanism_cpp" / "raw_runs.csv"
 PROD = BASE / "r1_production_cpp" / "raw_runs.csv"
 
