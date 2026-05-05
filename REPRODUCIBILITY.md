@@ -31,7 +31,7 @@ The published experiments used:
 - Matched DEM/DSM map-sheet products organised through VRT mosaics at three elevation scales (single-sheet `2697 × 1957`, `2 × 2` mosaic `5299 × 3816`, `2 × 3` mosaic `7891 × 3835`); single-band `Float32`, `10 m` pixel size, `NoData = -9999`.
 - A JiLin-1 panchromatic image (satellite `JL1KF02B02`, sensor `PMS09`, product level `L1`) acquired 2025-03-27 at `0.5 m` GSD, `30839 × 30948` pixels, single-band `UInt16`, 14-bit radiometric depth, scene-centred at approximately 30.146° N / 103.984° E.
 
-These datasets cannot be redistributed because they are derived from restricted production data. To replicate the benchmark you will need to supply equivalent local rasters and update the `path` fields in `benchmark/configs/*.json`.
+These datasets cannot be redistributed because they were collected during surveying and mapping production projects undertaken by the authors' institution and are subject to project data use constraints. To replicate the benchmark you will need to supply equivalent local rasters and update the `path` fields in `benchmark/configs/*.json`.
 
 ## 4. Configuration entry points
 

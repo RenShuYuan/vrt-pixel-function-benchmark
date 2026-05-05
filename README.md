@@ -54,7 +54,7 @@ benchmark_cpp.exe configs\r1_mechanism_cpp.json
 benchmark_cpp.exe configs\r1_production_cpp.json
 ```
 
-The source raster datasets used in the published experiments (matched DEM/DSM map-sheet products and a 1.9 GB JiLin-1 panchromatic scene) cannot be redistributed because they were derived from restricted production data; you will need to supply equivalent inputs locally.
+The source raster datasets used in the published experiments (matched DEM/DSM map-sheet products and a 1.9 GB JiLin-1 panchromatic scene) cannot be redistributed because they were collected during surveying and mapping production projects undertaken by the authors' institution and are subject to project data use constraints; you will need to supply equivalent inputs locally.
 
 ### Generate Figure 5
 
