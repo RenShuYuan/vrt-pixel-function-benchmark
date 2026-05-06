@@ -65,7 +65,7 @@ python gen_fig5.py
 
 ## Citation
 
-If you use this code or the reported results, please cite the manuscript once it is published. The following placeholder may be used while the manuscript is in submission / review:
+If you use this code or the reported results, please cite the manuscript once it is published. The following placeholder may be used while the manuscript is in submission or review:
 
 ```bibtex
 @article{LongCui2026VRT,
